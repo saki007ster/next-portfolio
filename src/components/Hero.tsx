@@ -131,7 +131,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="#projects"
+              href="https://github.com/saki007ster"
               className="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
             >
               View Projects
