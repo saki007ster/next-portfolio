@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaClock, FaTag, FaArrowLeft, FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import Link from 'next/link';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import GiscusComments from '@/components/GiscusComments';
 
 interface BlogPost {
   slug: string;
@@ -56,7 +57,7 @@ export default function BlogDetail({ post }: { post: BlogPost }) {
               <circle cx="400" cy="80" r="6" fill="#fff" fillOpacity="0.7" />
               <circle cx="600" cy="80" r="6" fill="#fff" fillOpacity="0.7" />
             </svg>
-            <span className="relative z-10 text-3xl font-bold text-white drop-shadow-lg">AI Blog</span>
+            <span className="relative z-10 text-3xl font-bold text-white drop-shadow-lg">Saket&apos;s Blog</span>
           </div>
         </div>
         <div className="mb-10">
@@ -119,6 +120,7 @@ export default function BlogDetail({ post }: { post: BlogPost }) {
             </a>
           </div>
         </div>
+        <GiscusComments />
         <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
           <Link href="/blog" className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
             <FaArrowLeft className="mr-2" /> Back to all posts

@@ -38,7 +38,7 @@ export default function BlogList({ blogPosts }: { blogPosts: BlogPost[] }) {
             <circle cx="400" cy="80" r="6" fill="#fff" fillOpacity="0.7" />
             <circle cx="600" cy="80" r="6" fill="#fff" fillOpacity="0.7" />
           </svg>
-          <span className="relative z-10 text-3xl font-bold text-white drop-shadow-lg">AI Blog</span>
+          <span className="relative z-10 text-3xl font-bold text-white drop-shadow-lg">Saket&apos;s Blog</span>
         </div>
       </div>
       <motion.div

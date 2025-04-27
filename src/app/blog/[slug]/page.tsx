@@ -32,12 +32,9 @@ async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   };
 }
 
-interface BlogPostPageProps {
-  params: { slug: string };
-}
-
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const slug = typeof params.slug === 'string' ? params.slug : params.slug?.[0] || '';
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const awaitedParams = await params;
+  const slug = typeof awaitedParams.slug === 'string' ? awaitedParams.slug : awaitedParams.slug?.[0] || '';
   const post = await getBlogPostBySlug(slug);
   if (!post) return notFound();
   return <BlogDetail post={post} />;
