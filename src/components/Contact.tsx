@@ -12,27 +12,37 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setError(null);
+    setSubmitted(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        setError(data.error || 'Failed to send message.');
+      }
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Server error.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset the submitted state after 3 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 3000);
-    }, 1500);
+    }
   };
 
   return (
@@ -157,6 +167,16 @@ export default function Contact() {
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   ></textarea>
                 </div>
+                
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 p-4 rounded-lg mb-6"
+                  >
+                    {error}
+                  </motion.div>
+                )}
                 
                 <button
                   type="submit"
