@@ -1,7 +1,7 @@
 ---
 title: "Preparing a Nutrition-Focused Fine-Tuning Dataset from PDFs (Part 1: Data Preparation)"
-date: "2024-06-09"
-excerpt: "How to prepare a high-quality nutrition Q&A dataset from nutrition books (PDF/EPUB), including extraction, cleaning, chunking, and Q&A generation for LLM fine-tuning."
+date: "2025-05-09"
+readTime: "30 min read"
 tags:
   - LLM
   - Fine-tuning
@@ -9,6 +9,9 @@ tags:
   - Data Preparation
   - Machine Learning
   - Python
+excerpt: "How to prepare a high-quality nutrition Q&A dataset from nutrition books (PDF/EPUB), including extraction, cleaning, chunking, and Q&A generation for LLM fine-tuning."
+featuredImage: "/images/blog/placeholder-part1.jpg"
+slug: "nutrition_llm_finetune_part1"
 ---
 
 # Preparing a Nutrition-Focused Fine-Tuning Dataset from PDFs (Part 1: Data Preparation)

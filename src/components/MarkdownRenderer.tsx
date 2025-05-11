@@ -6,6 +6,7 @@ import rehypeSanitize from 'rehype-sanitize';
 import React from 'react';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/atom-one-dark.css';
+import type { Element } from 'hast';
 
 // Use more specific types for each element
 interface MarkdownProps {
@@ -13,12 +14,10 @@ interface MarkdownProps {
 }
 
 // Define specific props for code blocks
-interface CustomCodeProps {
-  node?: any;
+interface CustomCodeProps extends React.HTMLAttributes<HTMLElement> {
+  node?: Element;
   inline?: boolean;
-  className?: string;
-  children?: React.ReactNode;
-  [key: string]: any;
+  // className and children are inherited from React.HTMLAttributes<HTMLElement>
 }
 
 export default function MarkdownRenderer({ content }: MarkdownProps) {
@@ -45,7 +44,7 @@ export default function MarkdownRenderer({ content }: MarkdownProps) {
           blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
             <blockquote className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic text-gray-700 dark:text-gray-400 mb-4" {...props} />
           ),
-          code: ({ node, inline, className, children, ...props }: CustomCodeProps) => {
+          code: ({ inline, className, children, ...props }: CustomCodeProps) => {
             if (inline) {
               // Apply new styles for inline code
               return (
@@ -58,9 +57,10 @@ export default function MarkdownRenderer({ content }: MarkdownProps) {
               );
             }
 
-            // For fenced code blocks
+            // For fenced code blocks, rehype-highlight adds classes to `className`
+            // and `children` are the highlighted tokens.
             return (
-              <code className={className} {...props}>
+              <code className={className} {...props}> 
                 {children}
               </code>
             );

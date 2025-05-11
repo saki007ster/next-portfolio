@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import BlogList from '@/components/BlogList';
+import type { Metadata } from 'next';
 
 async function getAllBlogPosts() {
   const postsDirectory = path.join(process.cwd(), 'content/blog');
@@ -25,6 +26,21 @@ async function getAllBlogPosts() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return posts;
 }
+
+export const metadata: Metadata = {
+  title: 'AI & Machine Learning Blog | Saket Kumar',
+  description: 'Discover insightful articles on Artificial Intelligence, Machine Learning, LLMs, MLX, and practical AI development by [Saket Kumar]. Stay updated with the latest trends and tutorials.',
+  openGraph: {
+    title: 'AI & Machine Learning Blog | Saket Kumar',
+    description: 'Insightful articles and tutorials on AI, ML, LLMs, and more.',
+    url: 'https://saketkmr.com/blog',
+    images: [ /* ... specific OG image for blog index ... */ ],
+  },
+  twitter: {
+    title: 'AI & Machine Learning Blog | Saket Kumar',
+    description: 'Insightful articles and tutorials on AI, ML, LLMs, and more.',
+  },
+};
 
 export default async function BlogPage() {
   const blogPosts = await getAllBlogPosts();

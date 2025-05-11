@@ -6,8 +6,20 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Saket Kumar | Full Stack Developer",
-  description: "Full Stack Developer specializing in building modern web applications and APIs.",
+  title: {
+    default: 'Saket Kumar - AI Developer & Researcher',
+    template: '%s | Saket Kumar AI',
+  },
+  description: 'Portfolio and blog of Saket Kumar, an AI Developer specializing in Fine tuning LLMs, MLX, etc.]. Discover projects, articles, and insights into the world of Artificial Intelligence.',
+  openGraph: {
+    siteName: 'Saket Kumar - AI Portfolio & Blog',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  keywords: ['AI Developer', 'Machine Learning', 'Portfolio', 'Blog', 'Artificial Intelligence'],
 };
 
 export default function RootLayout({

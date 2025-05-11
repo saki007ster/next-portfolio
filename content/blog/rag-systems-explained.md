@@ -1,6 +1,6 @@
 ---
 title: "RAG Systems Explained: Enhancing LLMs with Real-Time Data"
-date: "2024-02-22"
+date: "2025-02-22"
 readTime: "11 min read"
 tags: ["AI", "RAG", "Vector Databases", "LLM"]
 excerpt: "A deep dive into Retrieval-Augmented Generation (RAG) architectures that enable LLMs to access and reason over current information."

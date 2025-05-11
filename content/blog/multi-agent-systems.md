@@ -1,6 +1,6 @@
 ---
 title: "Building Multi-Agent Systems with LangChain & CrewAI"
-date: "2024-03-18"
+date: "2024-11-18"
 readTime: "15 min read"
 tags: ["AI", "Multi-Agent", "LangChain", "CrewAI"]
 excerpt: "Learn how to design and implement collaborative AI agent architectures that can solve complex problems through specialized roles and coordination."

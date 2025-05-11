@@ -6,7 +6,7 @@ import Link from 'next/link';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import GiscusComments from '@/components/GiscusComments';
 
-interface BlogPost {
+export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;

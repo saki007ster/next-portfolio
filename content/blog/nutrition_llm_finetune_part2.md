@@ -1,6 +1,6 @@
 ---
 title: "Fine-tuning Your Own Nutrition Expert LLM on MacBook Using MLX (Part 2: Model Training and Deployment)"
-date: "2024-06-10" 
+date: "2025-05-11" 
 tags:
   - LLM
   - Fine-tuning

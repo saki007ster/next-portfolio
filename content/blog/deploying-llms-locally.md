@@ -1,6 +1,6 @@
 ---
 title: "Deploying LLMs Locally Using Ollama & Docker"
-date: "2024-04-05"
+date: "2025-03-05"
 readTime: "12 min read"
 tags: ["AI", "LLM", "Ollama", "Docker"]
 excerpt: "A comprehensive guide to running large language models on your own hardware using Ollama and Docker for better privacy and lower costs."
