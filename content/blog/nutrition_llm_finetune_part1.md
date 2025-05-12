@@ -14,8 +14,6 @@ featuredImage: "/images/blog/placeholder-part1.jpg"
 slug: "nutrition_llm_finetune_part1"
 ---
 
-# Preparing a Nutrition-Focused Fine-Tuning Dataset from PDFs (Part 1: Data Preparation)
-
 Fine-tuning a Large Language Model (LLM) on domain-specific data can transform a general AI assistant into an expert in that domain. In this two-part series, we'll walk through how to prepare a high-quality nutrition Q&A dataset from a collection of nutrition books (provided as PDFs/EPUBs) and then fine-tune an LLM to become a proficient nutrition expert. This first part covers dataset preparation – extracting text from the PDFs, chunking it by topic, formulating question-answer pairs, and packaging everything into the required JSONL format. (Part 2 will cover the actual fine-tuning process using the prepared dataset and mlx_lm commands.)
 
 ## Why Fine-Tune an LLM on Nutrition Data?

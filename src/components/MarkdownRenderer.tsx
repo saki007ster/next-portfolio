@@ -3,9 +3,10 @@
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
-import React from 'react';
 import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 import 'highlight.js/styles/atom-one-dark.css';
+import React from 'react';
 import type { Element } from 'hast';
 
 // Use more specific types for each element
@@ -24,6 +25,7 @@ export default function MarkdownRenderer({ content }: MarkdownProps) {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeHighlight]}
         components={{
           h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className="text-3xl font-bold mb-6 mt-8" {...props} />,
@@ -65,6 +67,14 @@ export default function MarkdownRenderer({ content }: MarkdownProps) {
               </code>
             );
           },
+          table: (props: React.TableHTMLAttributes<HTMLTableElement>) => 
+            <table className="border-collapse table-auto w-full my-6" {...props} />,
+          thead: (props: React.HTMLAttributes<HTMLTableSectionElement>) => 
+            <thead className="bg-gray-100 dark:bg-gray-800" {...props} />,
+          th: (props: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => 
+            <th className="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left font-bold" {...props} />,
+          td: (props: React.TdHTMLAttributes<HTMLTableDataCellElement>) => 
+            <td className="border border-gray-300 dark:border-gray-700 px-4 py-2" {...props} />,
         }}
       >
         {content}

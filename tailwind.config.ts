@@ -37,9 +37,31 @@ const config: Config = {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            table: {
+              borderCollapse: 'collapse',
+              width: '100%',
+            },
+            'thead th': {
+              backgroundColor: 'var(--tw-prose-th-bg, #f3f4f6)',
+              fontWeight: 'bold',
+              borderWidth: '1px',
+              borderColor: 'var(--tw-prose-td-borders, #d1d5db)',
+              padding: '0.5rem 1rem',
+            },
+            'tbody td': {
+              borderWidth: '1px',
+              borderColor: 'var(--tw-prose-td-borders, #d1d5db)',
+              padding: '0.5rem 1rem',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 export default config; 

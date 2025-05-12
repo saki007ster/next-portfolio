@@ -1,6 +1,7 @@
 ---
 title: "Fine-tuning Your Own Nutrition Expert LLM on MacBook Using MLX (Part 2: Model Training and Deployment)"
 date: "2025-05-11" 
+readTime: "25 min read"
 tags:
   - LLM
   - Fine-tuning
@@ -12,16 +13,9 @@ excerpt: "Part 2: Learn to fine-tune a pretrained LLM like Ministral-8B-Instruct
 featuredImage: "/images/blog/placeholder-part2.jpg"
 slug: "nutrition_llm_finetune_part2"
 ---
-
-Here's Part 2 of the series, continuing seamlessly from Part 1:
-
-⸻
-
-## Fine-tuning Your Own Nutrition Expert LLM on MacBook Using MLX
-
 **(Part 2: Model Training and Deployment)**
 
-In Part 1, we learned how to prepare a fine-tuning dataset from a collection of nutrition books, chunk the content intelligently, and format it into a chat-style JSONL structure ready for model training.
+In [Part 1](https://www.saketkmr.com/blog/nutrition_llm_finetune_part1), we learned how to prepare a fine-tuning dataset from a collection of nutrition books, chunk the content intelligently, and format it into a chat-style JSONL structure ready for model training.
 Now in Part 2, we'll bring that dataset to life:
 we'll fine-tune a pretrained instruct-tuned LLM (like Ministral-8B-Instruct) using Apple's MLX framework right on our MacBook.
 

@@ -19,11 +19,6 @@ interface FilePostData {
   content: string;
 }
 
-// Interface for your actual params structure
-interface MyPageParams {
-  slug: string;
-}
-
 // Updated data fetching function
 async function getPostData(slug: string): Promise<FilePostData> {
   const filePath = path.join(process.cwd(), 'content/blog', `${slug}.md`);
@@ -52,12 +47,20 @@ async function getPostData(slug: string): Promise<FilePostData> {
   } as FilePostData;
 }
 
+// Keep the interface
+// interface MyPageParams {
+//   slug: string;
+// }
+
 export async function generateMetadata(
+  // Add ESLint disable comment directly before the props parameter
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props: any 
+  props: any
 ): Promise<Metadata> {
-  const params = props.params as MyPageParams;
+  // Await the params object directly
+  const params = await props.params;
   const slug = params.slug;
+  
   const postDataFromFile = await getPostData(slug);
   const siteUrl = 'https://saketkmr.com'; 
 
@@ -84,11 +87,15 @@ export async function generateMetadata(
 }
 
 export default async function BlogPostPage(
+  // Add ESLint disable comment directly before the props parameter
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props: any
 ) {
-  const params = props.params as MyPageParams;
-  const postDataFromFile = await getPostData(params.slug);
+  // Await the params object directly
+  const params = await props.params;
+  const slug = params.slug;
+  
+  const postDataFromFile = await getPostData(slug);
   
   // Transform FilePostData to the imported BlogPost type expected by BlogDetail
   const postForBlogDetail: BlogPost = {
