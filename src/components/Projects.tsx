@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaReact, FaNodeJs, FaDocker, FaAws, FaPython, FaServer, FaCloud, FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaRobot, FaBrain } from 'react-icons/fa';
-import { SiMongodb, SiKubernetes, SiTypescript, SiTailwindcss, SiExpress, SiPostgresql, SiRedis, SiOpenai, SiHuggingface } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDocker, FaAws, FaPython, FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaRobot, FaBrain, FaFileAlt, FaHospital, FaShieldAlt, FaDatabase } from 'react-icons/fa';
+import { SiMongodb, SiKubernetes, SiTypescript, SiTailwindcss, SiExpress, SiPostgresql, SiRedis, SiOpenai, SiHuggingface, SiVercel, SiGithub } from 'react-icons/si';
+import { aiProjects } from '@/content/projects/ai-projects';
 
 type Project = {
   title: string;
@@ -18,6 +19,8 @@ type Project = {
   challenge: string;
   demoLink: string;
   githubLink?: string;
+  summary: string;
+  techStack: string;
 };
 
 const techIcons: Record<string, React.ReactNode> = {
@@ -38,6 +41,19 @@ const techIcons: Record<string, React.ReactNode> = {
   'CrewAI': <FaRobot className="text-purple-500" title="CrewAI" />,
   'Hugging Face': <SiHuggingface className="text-yellow-600" title="Hugging Face" />,
   'Next.js': <FaReact className="text-black dark:text-white" title="Next.js" />,
+  // AI/ML specific icons
+  'Ollama': <FaBrain className="text-purple-500" title="Ollama" />,
+  'GPT-4o': <SiOpenai className="text-green-500" title="GPT-4o" />,
+  'Markdown': <FaFileAlt className="text-blue-600" title="Markdown" />,
+  'OpenMRS': <FaHospital className="text-blue-500" title="OpenMRS" />,
+  'LangGraph': <FaRobot className="text-indigo-500" title="LangGraph" />,
+  'T-RBAC': <FaShieldAlt className="text-red-500" title="T-RBAC" />,
+  'RAG': <FaBrain className="text-orange-500" title="RAG" />,
+  'Custom Dataset': <FaDatabase className="text-green-600" title="Custom Dataset" />,
+  'Vercel': <SiVercel className="text-black dark:text-white" title="Vercel" />,
+  'FastAPI': <FaPython className="text-teal-500" title="FastAPI" />,
+  'GitHub Actions': <SiGithub className="text-gray-800" title="GitHub Actions" />,
+  'Fine-tuned LLM': <FaBrain className="text-pink-500" title="Fine-tuned LLM" />,
 };
 
 // Project card with a CSS gradient and icon as a placeholder for a real image
@@ -170,84 +186,7 @@ export function ProjectCard({ project, index }: { project: Project, index: numbe
   );
 }
 
-const projects: Project[] = [
-  {
-    title: 'AI Risk Assessment Platform',
-    description: 'An intelligent platform using multi-agent AI systems to evaluate and analyze cybersecurity risks for organizations.',
-    technologies: ['OpenAI', 'LangChain', 'CrewAI', 'Next.js', 'TypeScript', 'Python'],
-    gradient: 'from-indigo-500 to-purple-600',
-    icon: <FaBrain />,
-    status: 'Completed',
-    year: '2023',
-    role: 'AI Developer & Full Stack Engineer',
-    features: [
-      'Multi-agent system for cybersecurity risk evaluation',
-      'LangChain and CrewAI for dynamic risk analysis',
-      'Interactive dashboard built with Next.js and TailwindCSS',
-      'Secure deployment with Docker and Kubernetes'
-    ],
-    challenge: 'Designing context-aware, explainable AI responses for different risk profiles while maintaining security and privacy.',
-    demoLink: '#',
-    githubLink: '#'
-  },
-  {
-    title: 'Full Stack App',
-    description: 'A comprehensive e-commerce platform with real-time inventory tracking and analytics.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    gradient: 'from-blue-500 to-purple-600',
-    icon: <FaReact />,
-    status: 'Completed',
-    year: '2023',
-    role: 'Full Stack Developer',
-    features: [
-      'User authentication and authorization',
-      'Payment processing integration',
-      'Real-time inventory management',
-      'Admin dashboard with analytics'
-    ],
-    challenge: 'Optimizing database queries for large product catalogs while maintaining fast page loads.',
-    demoLink: '#',
-    githubLink: '#'
-  },
-  {
-    title: 'Cloud Platform',
-    description: 'A scalable cloud infrastructure solution for deploying and managing containerized applications.',
-    technologies: ['Docker', 'Kubernetes', 'AWS'],
-    gradient: 'from-green-500 to-teal-600',
-    icon: <FaCloud />,
-    status: 'In Progress',
-    year: '2023',
-    role: 'DevOps Engineer',
-    features: [
-      'Auto-scaling container deployments',
-      'Load balancing and failover',
-      'Continuous integration pipeline',
-      'Monitoring and alerting system'
-    ],
-    challenge: 'Designing a cost-effective auto-scaling solution that handles traffic spikes efficiently.',
-    demoLink: '#',
-    githubLink: '#'
-  },
-  {
-    title: 'API Gateway',
-    description: 'A high-performance API gateway for managing microservices communication with advanced security features.',
-    technologies: ['Express', 'PostgreSQL', 'Redis'],
-    gradient: 'from-orange-500 to-red-600',
-    icon: <FaServer />,
-    status: 'Completed',
-    year: '2022',
-    role: 'Backend Developer',
-    features: [
-      'JWT authentication',
-      'Rate limiting and throttling',
-      'Request validation and sanitization',
-      'Caching for improved performance'
-    ],
-    challenge: 'Implementing a robust rate-limiting system that works across multiple server instances.',
-    demoLink: '#',
-    githubLink: '#'
-  },
-];
+const projects: Project[] = aiProjects;
 
 export default function Projects() {
   return (

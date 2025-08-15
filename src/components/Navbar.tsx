@@ -23,7 +23,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', path: '/', icon: <FaHome className="mr-1" /> },
     { name: 'About', path: '/about', icon: <FaUser className="mr-1" /> },
-    { name: 'Projects', path: 'https://github.com/saki007ster', icon: <FaCode className="mr-1" /> },
+    { name: 'Projects', path: '/projects', icon: <FaCode className="mr-1" /> },
     { name: 'Blog', path: '/blog', icon: <FaBook className="mr-1" /> },
     { name: 'Contact', path: '/contact', icon: <FaEnvelope className="mr-1" /> },
   ];

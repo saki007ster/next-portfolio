@@ -3,6 +3,7 @@
 import React from 'react';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 // Import any other hooks or components needed for your homepage's client-side interactivity
 // For example:
@@ -37,16 +38,12 @@ export default function HomePageClientContent() {
       <Contact />  // If Contact is inherently a client component or used client logic
       */}
 
-      {/* Placeholder until you move your actual content */}
-      <div className="p-4 border border-dashed border-gray-400 rounded-md">
-        <p className="text-center text-gray-600">
-        <main className="min-h-screen">
-          <Hero />
-          <About />
-          <Contact />
-        </main>
-        </p>
-      </div>
+      <main className="min-h-screen">
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
       {/* ---  END: MOVE YOUR JSX THAT USES CLIENT LOGIC HERE  --- */}
     </>
   );
