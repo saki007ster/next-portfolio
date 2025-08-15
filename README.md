@@ -34,3 +34,33 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Environment Variables
+
+### Contact Form Email Service (Resend)
+
+To enable the contact form email functionality, you need to set up environment variables:
+
+1. **Get your Resend API key:**
+   - Sign up at [resend.com](https://resend.com)
+   - Go to API Keys section
+   - Create a new API key
+
+2. **Set environment variables:**
+   ```bash
+   # Local development (.env.local)
+   RESEND_API_KEY=re_your_api_key_here
+   
+   # Production (Vercel)
+   # Add RESEND_API_KEY in your Vercel project settings
+   ```
+
+3. **Domain verification (optional but recommended):**
+   - In Resend dashboard, verify your domain
+   - Update the `from` field in `src/app/api/contact/route.ts` to use your domain
+   - Example: `from: 'Contact Form <noreply@yourdomain.com>'`
+
+### Current Configuration
+- **Email Service:** Resend
+- **Recipient:** saketkmr.dev@gmail.com
+- **From Address:** onboarding@resend.dev (default, can be customized)

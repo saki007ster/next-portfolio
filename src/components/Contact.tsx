@@ -99,7 +99,7 @@ export default function Contact() {
                 <FaPhoneAlt className="text-purple-600 text-xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Phone</h3>
-              <p className="text-gray-600 dark:text-gray-400">Available on request</p>
+              <p className="text-gray-600 dark:text-gray-400">+1 (716) 948-9424</p>
             </motion.div>
           </div>
           
