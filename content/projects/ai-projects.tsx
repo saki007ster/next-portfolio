@@ -127,7 +127,7 @@ export const aiProjects: Project[] = [
       'Privacy-focused user interactions'
     ],
     challenge: 'Developing an AI system that provides genuine mental health support while maintaining strict ethical boundaries and user safety protocols.',
-    demoLink: '#',
+    demoLink: 'https://resilience-ai.vercel.app/',
     githubLink: 'https://github.com/saki007ster/ResilienceAI',
     summary: 'An empathetic AI chatbot designed for resilience building. Trained on trauma-informed therapy content and cognitive strategies, the system provides gentle, guided mental health support within ethical and safety bounds.',
     techStack: 'Fine-tuned LLM, Custom Dataset, LangChain'

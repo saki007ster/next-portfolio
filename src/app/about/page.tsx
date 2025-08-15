@@ -30,7 +30,7 @@ const skills: (keyof typeof skillIcons)[] = [
 
 const education = [
   {
-    degree: 'Master of Science, Management Information System',
+    degree: 'Master of Science, Management Information System, GPA: 4.0/4.0',
     school: 'University at Buffalo, SUNY',
     period: 'June 2025',
   },
