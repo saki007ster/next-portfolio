@@ -2,8 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { FaReact, FaNodeJs, FaDocker, FaAws, FaPython, FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaRobot, FaBrain, FaFileAlt, FaHospital, FaShieldAlt, FaDatabase, FaCode } from 'react-icons/fa';
-import { SiMongodb, SiKubernetes, SiTypescript, SiTailwindcss, SiExpress, SiPostgresql, SiRedis, SiOpenai, SiHuggingface, SiVercel, SiGithub } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDocker, FaAws, FaPython, FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaRobot, FaBrain, FaFileAlt, FaHospital, FaShieldAlt, FaDatabase, FaCode, FaCloud } from 'react-icons/fa';
+import { SiMongodb, SiTypescript, SiTailwindcss, SiExpress, SiPostgresql, SiRedis, SiOpenai, SiHuggingface, SiVercel, SiGithub } from 'react-icons/si';
 import { aiProjects, Project } from '@/content/projects/ai-projects';
 
 const techIcons: Record<string, React.ReactNode> = {
@@ -11,7 +11,7 @@ const techIcons: Record<string, React.ReactNode> = {
   'Node.js': <FaNodeJs className="text-green-600" title="Node.js" />,
   'MongoDB': <SiMongodb className="text-green-700" title="MongoDB" />,
   'Docker': <FaDocker className="text-blue-500" title="Docker" />,
-  'Kubernetes': <SiKubernetes className="text-blue-400" title="Kubernetes" />,
+  'Terraform': <FaCloud className="text-orange-500" title="Terraform" />,
   'AWS': <FaAws className="text-yellow-500" title="AWS" />,
   'TypeScript': <SiTypescript className="text-blue-600" title="TypeScript" />,
   'Tailwind CSS': <SiTailwindcss className="text-cyan-400" title="Tailwind CSS" />,

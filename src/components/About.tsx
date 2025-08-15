@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaDocker, FaAws, FaPython } from 'react-icons/fa';
-import { SiMongodb, SiKubernetes, SiTypescript, SiTailwindcss, SiExpress, SiPostgresql, SiRedis, SiDjango, SiNextdotjs } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDocker, FaAws, FaPython, FaCloud } from 'react-icons/fa';
+import { SiMongodb, SiTypescript, SiTailwindcss, SiExpress, SiPostgresql, SiRedis, SiDjango, SiNextdotjs } from 'react-icons/si';
 
 const skillIcons = {
   'React': <FaReact className="text-sky-500 text-xl" />,
@@ -18,7 +18,7 @@ const skillIcons = {
   'PostgreSQL': <SiPostgresql className="text-blue-700 text-xl" />,
   'Redis': <SiRedis className="text-red-600 text-xl" />,
   'Docker': <FaDocker className="text-blue-500 text-xl" />,
-  'Kubernetes': <SiKubernetes className="text-blue-400 text-xl" />,
+  'Terraform': <FaCloud className="text-orange-500 text-xl" />,
   'AWS': <FaAws className="text-yellow-500 text-xl" />,
 };
 
@@ -26,7 +26,7 @@ const skills: (keyof typeof skillIcons)[] = [
   'React', 'Next.js', 'TypeScript', 'Tailwind CSS',
   'Node.js', 'Express', 'Python', 'Django',
   'MongoDB', 'PostgreSQL', 'Redis',
-  'Docker', 'Kubernetes', 'AWS',
+  'Docker', 'Terraform', 'AWS',
 ];
 
 export default function About() {

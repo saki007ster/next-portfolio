@@ -75,7 +75,7 @@ export default function Contact() {
                 <FaMapMarkerAlt className="text-blue-600 text-xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Location</h3>
-              <p className="text-gray-600 dark:text-gray-400">Buffalo, NY, USA</p>
+              <p className="text-gray-600 dark:text-gray-400">Florence, Kentucky, USA</p>
             </motion.div>
             
             <motion.div 
@@ -86,9 +86,9 @@ export default function Contact() {
                 <FaEnvelope className="text-green-600 text-xl" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
-              <a href="mailto:saki007ster@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                saki007ster@gmail.com
-              </a>
+                      <a href="mailto:saketkmr.dev@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+          saketkmr.dev@gmail.com
+        </a>
             </motion.div>
             
             <motion.div 
@@ -215,7 +215,7 @@ export default function Contact() {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1, y: -5 }}
-              href="mailto:saki007ster@gmail.com"
+                              href="mailto:saketkmr.dev@gmail.com"
               className="text-red-500 hover:text-red-600 transition-colors"
             >
               <div className="bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg">
