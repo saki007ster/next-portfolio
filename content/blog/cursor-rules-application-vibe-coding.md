@@ -3,7 +3,8 @@ title: "Cursor Rules and Their Applications for Vibe-Coders"
 date: "2025-10-02"
 readTime: "10 min read"
 tags: ["Cursor", "Cursor Rules", "AI", "Vibe Coding", "React"]
-excerpt: "Consistency isn’t about perfectionism. It’s about giving the model strong context cues. When every React component looks the same, the AI learns those patterns and reinforces them. That’s how you get code you can actually ship."
+excerpt: "Consistency isn't about perfectionism. It's about giving the model strong context cues. When every React component looks the same, the AI learns those patterns and reinforces them. That's how you get code you can actually ship."
+featuredImage: "/images/blog/resilience-ai-vibe-coding.png"
 slug: "cursor-rules-application-vibe-coding"
 ---
 
