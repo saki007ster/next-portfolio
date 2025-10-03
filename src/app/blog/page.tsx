@@ -19,7 +19,7 @@ async function getAllBlogPosts() {
         excerpt: data.excerpt,
         date: data.date,
         readTime: data.readTime,
-        tags: data.tags,
+        tags: data.tags || [],
         featuredImage: data.featuredImage,
       };
     })

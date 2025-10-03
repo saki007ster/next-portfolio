@@ -36,7 +36,7 @@ export const aiProjects: Project[] = [
     ],
     challenge: 'Designing context-aware, explainable AI responses for different risk profiles while maintaining security and privacy.',
     demoLink: '#',
-    githubLink: 'https://github.com/saki007ster/ResilienceAI',
+    githubLink: 'https://github.com/saki007ster',
     summary: 'Built at UB\'s Cybersecurity Clinic, this multi-agent AI system analyzes structured risk inputs and generates detailed markdown reports for leadership. The architecture supports modular agent orchestration and secure input processing.',
     techStack: 'LangChain, Ollama, GPT-4o, Markdown, PostgreSQL'
   },

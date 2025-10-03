@@ -10,7 +10,7 @@ export type BlogPost = {
   excerpt: string;
   date: string;
   readTime: string;
-  tags: string[];
+  tags?: string[];
   featuredImage: string;
 };
 
@@ -143,7 +143,7 @@ export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           </p>
           
           <div className="flex flex-wrap gap-2 mb-4">
-            {post.tags.map((tag, i) => (
+            {post.tags && post.tags.length > 0 ? post.tags.map((tag, i) => (
               <span 
                 key={i}
                 className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs flex items-center"
@@ -151,7 +151,12 @@ export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
                 <FaTag className="mr-1 text-xs" />
                 {tag}
               </span>
-            ))}
+            )) : (
+              <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs flex items-center">
+                <FaTag className="mr-1 text-xs" />
+                General
+              </span>
+            )}
           </div>
           
           <div className="text-blue-600 dark:text-blue-400 text-sm font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors flex items-center">
